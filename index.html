@@ -25,13 +25,7 @@
 :root {
 	 --plyr-color-main: #009227;
 }
- html, body {
-	 background-image: url("https://i.postimg.cc/fbSXnBct/video.png");
-	 background-attachment: fixed;
-	 background-size: cover;
-	 background-position: center;
-	 background-blend-mode: soft-light;
-}
+
  small, .text-small {
 	 font-size: 0.8em;
 }
@@ -199,6 +193,10 @@
         scroll-behavior: smooth;
         height: 108rem;
         scrollbar-width: thin;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: screen;
       }
 
       ::-webkit-scrollbar {
@@ -250,7 +248,7 @@
       </div>
     </div>
 
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="p-5 mb-4 bg-transparent rounded-3 text-light">
       <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold">Information</h1>
         <p class="col-md-8 fs-4">Sirius is an adaptive team of developers who strive to give our customers the best experience with our scripts. We consistently push out new updates, libraries, scripts, and products to give our users the highest quality scripts. Sirius is and will persist in being one of the best providers in roblox scripting.</p>
@@ -268,14 +266,14 @@
 
     <div class="row align-items-md-stretch">
       <div class="col-md-6">
-        <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <div class="h-100 p-5 text-white bg-dark rounded-3 bg-transparent">
           <h2>Community</h2>
           <p>Our amazing community helps us everyday with suggestions on features, scripts, design, and much more. We are who we are today because of our developers, moderation team, and the community. If you have anything to share click the button below to join our community.</p>
           <button class="btn btn-outline-secondary" type="button"><a href="https://discord.gg/sirius" target="_blank" style="color: #aaa; text-decoration: none;">Join us!</a></button>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <div class="h-100 p-5 text-white bg-dark rounded-3 bg-transparent">
           <h2>Script</h2>
           <p>For more information and to keep up with the latest news and releases be sure to join our discord and stay in touch with our team. Click the button below to begin using our script now!</p>
           <select class="form-select" aria-label="Default select example" id="scriptselector">
@@ -474,6 +472,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+var bgfade = document.querySelector("p").offsetTop;
+window.onscroll = function() {
+  if (window.pageYOffset > 98) {
+    var opac = (window.pageYOffset / bgfade);
+    console.log(window.pageYOffset);
+    document.body.style.background = "linear-gradient(rgba(255, 255, 255, " + opac/6 + "), rgba(255, 255, 255, " + opac/6 + ")), url(resources/images/bg1.png) no-repeat  ";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.attachment = "fixed";
+    document.body.style.position = "center";
+    document.body.style.scrollBehavior = "smooth";
+    if(opac > 2.2) {
+      opac = (window.pageYOffset / -Math.abs(bgfade)) + 2.7
+      document.body.style.background = "linear-gradient(rgba(255, 255, 255, " + opac + "), rgba(255, 255, 255, " + opac + ")), url(resources/images/bg2.png) no-repeat  ";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.attachment = "fixed";
+      document.body.style.position = "center";
+      document.body.style.scrollBehavior = "smooth";
+      console.log(opac)
+    }
+  } else {
+    var opac = (window.pageYOffset / bgfade);
+    document.body.style.background = "linear-gradient(rgba(255, 255, 255, " + opac/100 + "), rgba(255, 255, 255, " + opac/100 + ")), url(resources/images/bg1.png) no-repeat  ";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.attachment = "fixed";
+    document.body.style.position = "center";
+    document.body.style.scrollBehavior = "smooth";
+  }
+}
 
 </script>
 </html>
