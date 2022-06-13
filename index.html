@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta Http-Equiv="Cache-Control" Content="no-cache">
+    <meta Http-Equiv="Pragma" Content="no-cache">
+    <meta Http-Equiv="Expires" Content="0">
+    <meta Http-Equiv="Pragma-directive: no-cache">
+    <meta Http-Equiv="Cache-directive: no-cache">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/logo.svg" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="resources/js/bootstrap.bundle.min.js"></script> <script src="resources/js/bootstrap.esm.min.js"></script>
+    <link rel="stylesheet" href="resources/css/bootstrap-grid.min.css" /> <link rel="stylesheet" href="resources/css/bootstrap-reboot.min.css" /> <link rel="stylesheet" href="resources/css/bootstrap-utilities.min.css" /> <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+    
+    <link rel='stylesheet' href='https://cdn.plyr.io/3.6.2/plyr.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/luxonauta/luxa@1.0/dist/compressed/luxa.css'>
+    <title>Sirius</title>
+
+    <style>
+
+:root {
+	 --plyr-color-main: #009227;
+}
+ html, body {
+	 background-image: url("https://i.postimg.cc/fbSXnBct/video.png");
+	 background-attachment: fixed;
+	 background-size: cover;
+	 background-position: center;
+	 background-blend-mode: soft-light;
+}
+ small, .text-small {
+	 font-size: 0.8em;
+}
+ .plyr--video {
+	 border-radius: 0.64em;
+	 box-shadow: 0.0625rem 0.125rem 0.25rem 0.0625rem rgba(0, 0, 0, 0.2);
+}
+ .plyr__poster {
+	 background-size: cover;
+	 background-position: top center;
+}
+ @media screen and (max-width: 31.25rem) {
+	 html, body {
+		 font-size: 95%;
+	}
+}
+ @media screen and (max-width: 22.5rem) {
+	 html, body {
+		 font-size: 90%;
+	}
+}
+ 
+
+      #alerttext {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+      }
+        
+
+        .logo {
+            position: absolute;
+            top:  50%;
+            left: 50%;
+            transform: translate(-50%,-40%);
+            height: 30rem;
+            width: 30rem;
+        }
+        
+        body {
+            background-color: #111;
+        }
+
+        .reveal{
+            opacity: 0;
+            transition: 2s all ease;
+            transform: translate(-20%,-10%);
+        }
+        .reveal.active{
+            transform: translate(-130%,-80%);
+            opacity: 1;
+        }
+
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      @media (min-width: 992px) {
+        .rounded-lg-3 { border-radius: .3rem; }
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      html, body {
+        scroll-behavior: smooth;
+        height: 108rem;
+        scrollbar-width: thin;
+      }
+
+      ::-webkit-scrollbar {
+          height: 12px;
+          width: 12px;
+          background: #000;
+      }
+
+      ::-webkit-scrollbar-thumb {
+          background: #393812;
+      }
+
+      ::-webkit-scrollbar-corner {
+          background: #000;
+      }
+
+      #toastjoin {
+        display: block;
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+      }
+
+      .plyr video{
+        display:block;
+        height:100%;
+        width:100%
+      }
+  </style>
+</head>
+<body>
+    
+<main>
+  <div class="container py-4">
+    <div class="px-4 pt-5 text-center">
+      <img class="d-block mx-auto mb-4" id="nocache" src="resources/images/sirius.gif" alt="" width="200" height="110">
+      <h1 class="display-4 fw-bold text-light">Sirius Software</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4 text-light" >Sirius Software is an advanced team of programmers and designers that are leading the space. We work with the game platform Roblox and create high quality content for our users to use. We put both time and effort into our creations and work non-stop for our community.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" onclick=seeMore()>See More</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4"><a href="https://discord.gg/sirius" target="_blank" style="text-decoration: none; color: #666;">Discord</a></button>
+        </div>
+      </div>
+      <div class="overflow-hidden" style="max-height: 30vh;">
+        <div class="container px-5">
+          <img src="resources/images/preview.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Information</h1>
+        <p class="col-md-8 fs-4">Sirius is an adaptive team of developers who strive to give our customers the best experience with our scripts. We consistently push out new updates, libraries, scripts, and products to give our users the highest quality scripts. Sirius is and will persist in being one of the best providers in roblox scripting.</p>
+        <button class="btn btn-primary btn-lg" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample" type="button">More Info</button>
+      </div>
+
+      <div style="min-height: 120px; position: absolute;">
+        <div class="collapse collapse-horizontal" id="collapseWidthExample">
+          <div class="card card-body" style="width: 800px;">
+            Our latest and greatest project, Sirius, is a script that will out-perform all others. After countless hours and much effort has been put into the development of this script, we are proud to say that we will lead the future in roblox scripting.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Community</h2>
+          <p>Our amazing community helps us everyday with suggestions on features, scripts, design, and much more. We are who we are today because of our developers, moderation team, and the community. If you have anything to share click the button below to join our community.</p>
+          <button class="btn btn-outline-secondary" type="button"><a href="https://discord.gg/sirius" target="_blank" style="color: #aaa; text-decoration: none;">Join us!</a></button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Script</h2>
+          <p>For more information and to keep up with the latest news and releases be sure to join our discord and stay in touch with our team. Click the button below to begin using our script now!</p>
+          <select class="form-select" aria-label="Default select example" id="scriptselector">
+            <option value="0" selected>Select which script you wish to use.</option>
+            <option value="1">Sirius (Coming Soon)</option>
+            <option value="2">Domain X</option>
+            <option value="3">Orion Library</option>
+            <option value="4">Sirius ESP Library</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Sirius</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modal-innards">
+            ...
+          </div>
+          <hr>
+          <a id="modal-script-link" target="_blank" style="text-decoration: underline;"><div class="modal-body" id="modal-script">
+            ...
+          </div></a>
+          <img class="modal-body" id="modal-image"/>
+          <div id="modal-video-div">
+            <video id="player" class="modal-videoplyr" playsinline controls>
+              <source src="resources/images/Sirius.webm" id="modal-video" type="video/webm" />
+            </video>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick=closeModal()>Close</button>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <footer class="pt-3 mt-4 text-muted" id="information">
+      <p class="text-light">&copy; Sirius Software 2022; <a href="https://discord.gg/sirius" target="_blank" style="color: aqua;" data-bs-toggle="tooltip" title="https://discord.gg/sirius">Discord</a></p>
+    </footer>
+  </div>
+</main>
+
+<div class="toast" id="toastjoin" role="alert" aria-live="assertive" aria-atomic="true" style="width: 22rem; height: 7rem;">
+  <div class="toast-body">
+    Join the Sirius Software community to stay up to date with the latest news and releases.
+    <div class="mt-2 pt-2 border-bottom">
+      <button type="button" class="btn btn-primary btn-sm"><a href="https://discord.gg/sirius" target="_blank" style="text-decoration: none; color:#fff;">Join</a></button>
+      <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast" onclick=closeToast()>Close</button>
+    </div>
+  </div>
+</div>
+
+
+</body>
+<script src='https://cdn.plyr.io/3.6.2/plyr.js'></script>
+<script src='https://use.fontawesome.com/releases/v5.14.0/js/all.js'></script>
+<script id="rendered-js" >
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+function closeModal() {
+  $('#player').trigger('pause');
+}
+
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+var antierr = 0
+$('#scriptselector').on('click',function() {
+  antierr++
+  if (antierr == 2) {
+    if($(this).val() == 0) {
+      antierr = 0
+      return
+    }
+ 
+    if($(this).val() == 3) {
+      $('#staticBackdropLabel').text('Orion Library')
+      $('#modal-innards').text('Orion is a UI Library developed to make your life easier. Its beautiful UI design and elegeant features allows for a smooth and easy experience. Orion is a great library to use for your scripts.')
+      $('#modal-script').text('https://github.com/shlexware/Orion')
+      document.getElementById('modal-script-link').href = 'https://github.com/shlexware/Orion'
+      document.getElementById('modal-image').src = 'resources/images/orion.png';
+      document.getElementById('modal-video-div').style = 'display: none;';
+
+      $('#staticBackdrop').modal('show')
+      antierr = 0
+    } else if($(this).val() == 4) {
+      $('#staticBackdropLabel').text('Sirius ESP Library')
+      $('#modal-innards').text('Sirius\' ESP Library is a library that allows you to easily create your own ESPs. It is a great way to learn how to make your own ESPs with an open-source library, and its easy to use customizable functions.')
+      $('#modal-script').text('https://github.com/shlexware/Sirius/blob/request/library/esp/documentation.md')
+      document.getElementById('modal-script-link').href = 'https://github.com/shlexware/Sirius/blob/request/library/esp/documentation.md'
+      document.getElementById('modal-image').src = 'resources/images/esplib.png';
+      document.getElementById('modal-video-div').style = 'display: none;';
+
+      $('#staticBackdrop').modal('show')
+      antierr = 0
+    } else if($(this).val() == 2) {
+      $('#staticBackdropLabel').text('Domain X')
+      $('#modal-innards').text('Domain X is an amazing script with many universal and game-specific scripts. The ergonimic design and the many great functions that come along with Domain X give a perfect synergy to create one of the best free scripts in roblox.')
+      $('#modal-script').text('https://github.com/shlexware/domainx')
+      document.getElementById('modal-script-link').href = 'https://github.com/shlexware/domainx'
+      document.getElementById('modal-image').src = 'resources/images/domainx.png';
+
+      document.getElementById('modal-video-div').style = 'display: none;';
+
+      $('#staticBackdrop').modal('show')
+      antierr = 0
+    } else if($(this).val() == 1) {
+      $('#staticBackdropLabel').text('Sirius')
+      $('#modal-innards').text('While Sirius is not yet released it is a highly anticipated script within the Sirius Software community. With a complete redesign in the UI Interface and a new script system, Sirius will redefine roblox in a way that no other script can.')
+      $('#modal-script').text('Join our Discord for more information!')
+      document.getElementById('modal-script-link').href = 'https://discord.gg/sirius'
+      document.getElementById('modal-video').src = 'resources/images/Sirius.webm';
+      document.getElementById('modal-image').src = '';
+      document.getElementById('modal-image').href = '';
+
+      document.getElementById('modal-video-div').style = 'display: block;';
+      
+      $('#staticBackdrop').modal('show')
+      antierr = 0
+    }
+  }
+});
+
+
+$('#scriptselector').val(0);
+
+
+window.addEventListener("scroll", reveal);
+
+reveal();
+
+document.getElementById('nocache').src = document.getElementById('nocache').src + '?' + (new Date()).getTime();
+document.getElementById('modal-image').src = document.getElementById('nocache').src + '?' + (new Date()).getTime();
+document.getElementById('toastjoin').display = 'block';
+
+function seeMore() {
+  const element = document.getElementById("information");
+  element.scrollIntoView();
+}
+
+const element = document.getElementById("nocache");
+element.scrollIntoView();
+
+function closeToast() {
+  document.getElementById('toastjoin').style.display = 'none';
+}
+
+// DOM Loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const player = new Plyr("#player", {
+    title: "Spring",
+    controls: [
+      "play-large",
+      "play",
+      "progress",
+      "current-time",
+      "duration",
+      "mute",
+      "volume",
+      "settings",
+      "pip",
+      "airplay",
+      "fullscreen"
+    ]
+  });
+
+  document.querySelectorAll(".accordion").forEach((acc) => {
+    acc.addEventListener("click", () => {
+      acc.classList.toggle("is-active");
+      let panel = acc.nextElementSibling;
+      panel.style.maxHeight
+        ? (panel.style.maxHeight = null)
+        : (panel.style.maxHeight = panel.scrollHeight + "px");
+    });
+  });
+
+  document.querySelectorAll(".go-to").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      player.currentTime = parseInt(btn.getAttribute("data-time"));
+      player.play();
+    });
+  });
+});
+
+</script>
+</html>
