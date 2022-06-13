@@ -1,0 +1,21 @@
+{
+  "name": "bettersirius",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xv3nm/sirius-source.git"
+  },
+  "author": "Totem#1000",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xv3nm/sirius-source/issues"
+  },
+  "homepage": "https://github.com/Xv3nm/sirius-source#readme",
+}
